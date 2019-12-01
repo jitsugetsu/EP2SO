@@ -1,2 +1,2 @@
 # EP2SO
-# Why hello there -Lenkiro
+# Why hello there -Lenkiro (~'-')~
