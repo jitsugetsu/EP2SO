@@ -20,7 +20,10 @@ public class main {
 		
 		for(int i = 0; i < 100; i++){
 			writhers [i] = new ReaderWriter(0);
-			writhers [i].readerCopy(rand.nextInt(36242), texto);
+		}
+		for (int i = 0; i < 100; i++){
+			if(writhers[i].tipo == 0) writhers[i].readerCopy(rand.nextInt(36242), texto);
+			else writhers[i].writerAlter(rand.nextInt(36242), texto);
 		}
 		System.out.println(writhers[0].readerVariavel);
 
