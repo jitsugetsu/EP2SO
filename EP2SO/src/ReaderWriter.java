@@ -17,8 +17,12 @@ public class ReaderWriter extends Thread{
     }
 
     public void run() {
-        int pos = rand.nextInt(36242);
-        if(tipo == 0) readerCopy(pos, main.texto);
-        else writerAlter(pos, main.texto);
+        int pos;
+        for(int i = 0; i< 100; i++){
+            pos = rand.nextInt(36242);
+            if(tipo == 0) readerCopy(pos, main.texto);
+            else writerAlter(pos, main.texto);
+        }
+        
     }
 }
