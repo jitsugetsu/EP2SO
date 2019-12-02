@@ -1,7 +1,10 @@
 import java.util.Scanner;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -17,6 +20,16 @@ public class main {
 		for(int i = 0; i < 36242; i++){
 			texto[i] = scan.next();
 		}
+		FileWriter filer = new FileWriter("numeros.txt", true);
+		BufferedWriter printer = new BufferedWriter(filer);
+		// for(int i = 0; i<10; i++){
+		// 	printer.write(i + "   ");
+		// }
+		// for(int i = 10; i<100; i++){
+		// 	printer.write(i + "  ");
+		// }
+    	// printer.write("\n");
+    	
 
 		for(int x = 0; x < 100; x++){
 			for(int i = 0; i < x; i++){
@@ -41,10 +54,10 @@ public class main {
 			}
 			
 			tempoFinal = System.currentTimeMillis() - tempoInicial;
-			System.out.println(x + " writers: " + tempoFinal);
-
+			// System.out.println(x + " writers: " + tempoFinal);
+			printer.write(tempoFinal + " ");
 		}
-		
+		printer.write("\n");
 		
 		/*
 		for(int x = 0; x<50; x++){
@@ -61,15 +74,10 @@ public class main {
 		tempoMedia /= 50;
 		System.out.println(tempoMedia);
 		*/
-		
+		printer.close();
 		scan.close();
 	}
 
-	static synchronized void cemAcessos(ReaderWriter writher) throws Exception{
-		for (int i = 0; i < 100; i++){
-			writher.start();
-		}
-	}
 
 }
 
